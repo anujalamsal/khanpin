@@ -6,15 +6,27 @@ body {
 
 .container {
     display: flex;
-    flex-direction: column;
     height: 100vh;
 }
 
 .left-side {
-    width: 100%;
+    width: 25%;
     background-color: #f7b0a0;
     padding: 20px;
     box-sizing: border-box;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto; /* Allows scrolling within the left side if the content overflows */
+}
+
+a {
+    color: #C85B43;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d88370;
+    text-decoration: none;
 }
 
 .left-side h1 {
@@ -48,9 +60,11 @@ body {
 }
 
 .right-side {
-    width: 100%;
+    width: 75%;
+    margin-left: 25%;
     padding: 20px;
     box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .right-side input[type="text"] {
@@ -74,7 +88,7 @@ body {
 }
 
 .filters select {
-    width: 80%;
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -82,63 +96,55 @@ body {
     margin-bottom: 10px;
 }
 
+.food-section {
+    margin-bottom: 40px;
+}
+
+.food-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
 .food-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 20px;
 }
 
-.food-item {
+.food-item,.food-item1 {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 10px;
     background-color: #fff;
 }
 
-.food-item img {
+.food-item img,.food-item1 img {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 10px;
 }
 
-.food-item h3 {
+.food-item h3,.food-item1 h3 {
     font-size: 18px;
     margin-bottom: 5px;
     color: #333;
 }
 
-.food-item p {
+.food-item p, .food-item1 p {
     font-size: 14px;
     color: #666;
     margin-bottom: 10px;
 }
 
-.food-item a {
+.food-item a,.food-item1 a {
     font-size: 14px;
     color: #C85B43;
     text-decoration: none;
 }
 
-
-
-
-@media (min-width: 768px) {
-    .filters select {
-        width: calc(50% - 5px);
-        margin-right: 10px;
-    }
-
-    .food-item {
-        padding: 8px;
-    }
-
-    .food-item img {
-        margin-bottom: 8px;
-    }
-
-    .food-items {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
+h3{
+    font-size: 16px;
+    font-weight: bolder;
 }
 
 
@@ -153,5 +159,26 @@ body {
 
     .right-side {
         width: 75%;
+    }
+    .filters {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .filters select {
+        width: calc(33.33% - 10px);
+        margin-right: 10px;
+    }
+
+    .food-item,.food-item1 {
+        padding: 8px;
+    }
+
+    .food-item img,.food .food-item1 {
+        margin-bottom: 8px;
+    }
+
+    .food-items {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }

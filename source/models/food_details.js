@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 
-const foodSchema=new mongoose.Schema({
+const foodetais=new mongoose.Schema({
 
    name:{
     type:String,
@@ -15,7 +15,18 @@ const foodSchema=new mongoose.Schema({
    province:{
     type:String,
     required:false
+   },
+
+   image:{
+    type:String,
+    required:true
+   },
+
+   link:{
+    type:String,
+    required:true
    }
+
 });
 
 const History=new mongoose.model("History",foodSchema);

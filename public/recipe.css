@@ -8,12 +8,6 @@ body {
     color: #000;
 }
 
-header {
-    background-color:#C85B43;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-}
 
 .container {
     display: flex;
@@ -35,6 +29,15 @@ header {
 .left-side h1 {
     margin-bottom: 20px;
     color: white;
+}
+a {
+    color: #C85B43;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d88370;
+    text-decoration: none;
 }
 
 .buttons {

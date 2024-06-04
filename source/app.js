@@ -6,7 +6,6 @@ const bcrypt=require('bcryptjs');
 const jwt=require('jsonwebtoken');
 const nodemailer=require('nodemailer');
 require('./db/connect');
-
 const Register=require("./models/registers");
 
 app.use(express.json());
@@ -14,92 +13,63 @@ app.use(express.urlencoded({extended:false}))
 
 app.use(express.static(path.join(__dirname,'../public')));
 
-app.get('/',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'../final/index.html'))
-});
+const index=require('../router/index');
+const signup=require('../router/signup');
+const home=require('../router/home');
+const recommendation=require('../router/recommendation');
+const forgotpassword=require('../router/forgotpassword');
+const map=require('../router/map');
 
 
-app.get('/signup',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'../final/signup.html'))
-});
+app.use('/',index);
 
-app.get('/home',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'../final/home.html'))
-})
+app.use('/',signup);
 
-app.get('/forgot_p',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'../final/forgotpassword.html'))
-})
+app.use('/',home);
 
+app.use('/',forgotpassword);
 
-app.get('/recommendation.html',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'../final/recommendation.html'))
-})
+app.use('/',recommendation);
 
-app.get('/map.html',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'../final/map.html'))
-})
+// app.get('/home',(req,res)=>{
+//     res.sendFile(path.resolve(__dirname,'../final/home.html'))
+// })
 
 
-app.post('/signup',async (req,res)=>{
-    const password=req.body.password;
-    const cpassword=req.body.cpassword;
-    try {
+
+app.use('/',map);
+
+
+
+// app.post("/login",async(req,res)=>{
+
+//     try {
+//         const username=req.body.username;
+//         const password=req.body.password;
+//         const Username=await Register.findOne({username});
+
+//         const isMatch=bcrypt.compare(password,Username.password);
     
 
-    if(password===cpassword)
-        {
-
-            const registerUser=new Register({
-                username:req.body.username,
-                email:req.body.email,
-                password:password,
-                cpassword:cpassword
-            })
-
-            const registered= await registerUser.save();
-            res.status(201).sendFile(path.resolve(__dirname,'../final/home.html'))
-        }
-
-        else
-        {
-            res.send('Password are not matching');
-        }
-
-} catch (error) {
-    res.status(400).send(error);
-}
-});
-
-app.post("/login",async(req,res)=>{
-
-    try {
-        const username=req.body.username;
-        const password=req.body.password;
-        const Username=await Register.findOne({username});
-
-        const isMatch=bcrypt.compare(password,Username.password);
-    
-
-    if(isMatch){
-            res.status(201).sendFile(path.resolve(__dirname,'../final/home.html'))
+//     if(isMatch){
+//             res.status(201).sendFile(path.resolve(__dirname,'../final/home.html'))
         
-    }
-    else{
-        res.send('User not found');
-    }
+//     }
+//     else{
+//         res.send('User not found');
+//     }
 
-    } 
+//     } 
 
     
-    catch (error) {
-        res.status(400).send("Invalid Username")
-    }
+//     catch (error) {
+//         res.status(400).send("Invalid Username")
+//     }
 
 
 
 
-});
+// });
 
 
 app.listen(port,()=>{
