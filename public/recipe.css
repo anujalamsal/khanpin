@@ -1,0 +1,155 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7b0a0;
+    color: #000;
+}
+
+header {
+    background-color:#C85B43;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    
+}
+
+.left-side {
+    width: 100%;
+    background-color: #f7b0a0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.left-side h1 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons a {
+    text-decoration: none;
+}
+
+.buttons button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #C85B43;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.buttons button i {
+    margin-right: 10px;
+}
+
+.right-side {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.right-side input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+
+
+.recipe-info {
+    text-align: left;
+}
+
+.ingredients {
+    margin-top: 20px;
+}
+
+.ingredients h2,
+.procedures h2,
+.comment-section h2,
+.reviews h2 {
+    margin-top: 0;
+}
+
+.ingredients ul,
+.procedures ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredients ol li,
+.procedures ol li {
+    margin-bottom: 5px;
+}
+.comment-section input[type="submit"] {
+    background-color: #C85B43;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.comment-section input[type="submit"]:hover {
+    background-color: #d07763;
+}
+
+
+.stars {
+    font-size: 24px;
+    color: #ffcc00;
+}
+
+.star {
+    cursor: pointer;
+}
+
+.star:hover,
+.star.active {
+    color: #ffdf88;
+
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .recipe-info {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .procedures,
+    .comment-section,
+    .reviews {
+        margin-top: 20px;
+    }
+}

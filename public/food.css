@@ -1,0 +1,266 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.left-side {
+    width: 100%;
+    background-color: #f7b0a0;
+    padding: 20px;
+    box-sizing: border-box;
+    position:fixed;
+}
+
+.left-side h1 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons a {
+    text-decoration: none;
+}
+
+.buttons button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #C85B43;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.buttons button i {
+    margin-right: 10px;
+}
+
+.right-side {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.right-side input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.filters select {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.food-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.food-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.food-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.food-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.food-item p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.food-item a {
+    font-size: 14px;
+    color: #C85B43;
+    text-decoration: none;
+}
+
+
+
+
+@media (min-width: 768px) {
+    .filters select {
+        width: calc(50% - 5px);
+        margin-right: 10px;
+    }
+
+    .food-item {
+        padding: 8px;
+    }
+
+    .food-item img {
+        margin-bottom: 8px;
+    }
+
+    .food-items {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .left-side {
+        width: 25%;
+    }
+
+    .right-side {
+        width: 75%;
+    }
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height:100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.left-side {
+    width: 100%;
+    background-color: #f7b0a0;
+    padding: 20px;
+    box-sizing: border-box;
+    height:100%;
+}
+
+.left-side h1 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons a {
+    text-decoration: none;
+}
+
+.buttons button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #C85B43;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.buttons button i {
+    margin-right: 10px;
+}
+
+.right-side {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.right-side input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.comment-section input[type="submit"] {
+    background-color: #C85B43;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.comment-section input[type="submit"]:hover {
+    background-color: #d07763;
+}
+
+
+.stars {
+    font-size: 24px;
+    color: #ffcc00;
+}
+
+.star {
+    cursor: pointer;
+}
+
+.star:hover,
+.star.active {
+    color: #ffdf88;
+
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .left-side {
+        width: 25%;
+    }
+
+    .right-side {
+        width: 75%;
+    }
+}

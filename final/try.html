@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Page</title>
+<link rel="stylesheet" href="try.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h1><a href="home.html">Khan Pin</a></h1>
+            <div class="buttons">
+                <a href="recommendation.html"> <button> <i class='bx bx-dish'></i>Recommendation</button></a>
+                <a href="map.html"> <button><i class='bx bx-map'></i> Map</button></a>
+                <a href="saved.html"><button> <i class='bx bx-heart'></i>Saved Recipes</button></a>
+                <a href="#"><button><i class='bx bxs-user'></i>Sign out</button></a>
+            </div>
+        </div>
+        <div class="right-side">
+            <input type="text" placeholder="Search for recipes...">
+            <h4>Filter By:</h4>
+            <div class="filters">
+                <select name="taste" id="taste">
+                    <option value="">Taste</option>
+                    <option value="spicy">Spicy</option>
+                    <option value="salty">Salty</option>
+                    <option value="sugary">Sugary</option>
+                    <option value="savory">Savory</option>
+                </select>
+                <select name="difficulty" id="difficulty">
+                    <option value="">Difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <select name="province" id="province">
+                    <option value="">Province</option>
+                    <option value="koshi">Koshi</option>
+                    <option value="madhesh">Madhesh</option>
+                    <option value="bagmati">Bagmati</option>
+                    <option value="gandaki">Gandaki</option>
+                    <option value="lumbini">Lumbini</option>
+                    <option value="karnali">Karnali</option>
+                    <option value="sudurpaschim">Sudurpaschim</option>
+                </select>
+            </div>
+            
+            <!-- Generic Food Section -->
+            <div class="food-section">
+                <h2>Generic Food</h2>
+                <div class="food-items">
+                    <!-- Repeat this block for each food item -->
+                    <div class="food-item">
+                        <img src="dal-bhat.jpg" alt="Dal Bhat">
+                        <h3>Dal Bhat</h3>
+                        <p>A traditional Nepali meal consisting of lentil soup (dal) and rice (bhat).</p>
+                        <a href="dalbhat.html" target="_blank">Recipe Book</a>
+                        <p><a href="https://youtu.be/1QF0KAgkZEI?si=tylhr_yJjNlA_Yc8" target="_blank">YouTube Link</a></p>
+                    </div>
+                    <!-- Add more food items here -->
+                </div>
+            </div>
+            
+            <!-- Authentic Foods Section -->
+            <div class="food-section">
+                <h2>Authentic Foods</h2>
+                <div class="food-items">
+                    <!-- Repeat this block for each food item -->
+                    <div class="food-item">
+                        <img src="momo.jpg" alt="Momo">
+                        <h3>Momo</h3>
+                        <p>A type of dumpling filled with meat or vegetables, steamed or fried, and served with a dipping sauce.</p>
+                        <a href="momo.html" target="_blank">Recipe Book</a>
+                        <p><a href="https://youtu.be/Hjrb41I8-EQ?si=7KQhL2uFYApESLoC" target="_blank">YouTube Link</a></p>
+                    </div>
+                    <!-- Add more food items here -->
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
