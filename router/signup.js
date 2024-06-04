@@ -2,6 +2,8 @@ const express=require('express');
 const Router=express.Router();  
 const path=require('path');
 const Register=require("../source/models/registers");
+const bcrypt=require('bcryptjs');
+
 
 
 Router.get('/signup',(req,res)=>{
@@ -24,7 +26,18 @@ Router.post('/signup',async (req,res)=>{
                 cpassword:cpassword
             })
 
-            const registered= await registerUser.save();
+            console.log('the success part is'+registerUser);
+
+            const token=await registerUser.generateAuthToken();
+            console.log('the token part is '+token);
+
+             await registerUser.save();
+
+             res.cookie('jwt', token, {
+                httpOnly: true,
+                maxAge: 31536000000 // 1 year
+              });
+              
             res.status(201).sendFile(path.resolve(__dirname,'../final/home.html'))
         }
 
@@ -34,7 +47,10 @@ Router.post('/signup',async (req,res)=>{
         }
 
 } catch (error) {
+    
+
     res.status(400).send(error);
+    console.log('the error part page');
 }
 });
 
