@@ -17,6 +17,7 @@ const home=require('../router/home');
 const recommendation=require('../router/recommendation');
 const forgotpassword=require('../router/forgotpassword');
 const map=require('../router/map');
+const resetpassword=require('../router/reset-password');
 
 
 app.use('/',index);
@@ -30,6 +31,8 @@ app.use('/',forgotpassword);
 app.use('/',recommendation);
 
 app.use('/',map);
+
+app.use('/',resetpassword);
 
 
 app.listen(port,()=>{
