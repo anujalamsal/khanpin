@@ -2,7 +2,7 @@ const express=require('express');
 const Router=express.Router();  
 const path=require('path');
 const Register=require("../source/models/registers");
-const bcrypt=require('bcryptjs');
+
 
 
 
@@ -35,7 +35,7 @@ Router.post('/signup',async (req,res)=>{
 
              res.cookie('jwt', token, {
                 httpOnly: true,
-                maxAge: 31536000000 // 1 year
+                maxAge: 31536000000 
               });
               
             res.status(201).sendFile(path.resolve(__dirname,'../final/home.html'))

@@ -1,7 +1,8 @@
 const express=require('express');
 const Router=express.Router();
 const path=require('path');
-const Register=require("../source/models/registers")
+const Register=require("../source/models/registers");
+const bcrypt=require('bcryptjs');
 require('../source/db/connect');
 
 Router.get('/',(req,res)=>{

@@ -2,11 +2,9 @@ const express=require('express');
 const app=express();
 const port=process.env.PORT || 3;
 const path=require('path');
-const bcrypt=require('bcryptjs');
-const jwt=require('jsonwebtoken');
-const nodemailer=require('nodemailer');
+
 require('./db/connect');
-const Register=require("./models/registers");
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
@@ -31,45 +29,7 @@ app.use('/',forgotpassword);
 
 app.use('/',recommendation);
 
-// app.get('/home',(req,res)=>{
-//     res.sendFile(path.resolve(__dirname,'../final/home.html'))
-// })
-
-
-
 app.use('/',map);
-
-
-
-// app.post("/login",async(req,res)=>{
-
-//     try {
-//         const username=req.body.username;
-//         const password=req.body.password;
-//         const Username=await Register.findOne({username});
-
-//         const isMatch=bcrypt.compare(password,Username.password);
-    
-
-//     if(isMatch){
-//             res.status(201).sendFile(path.resolve(__dirname,'../final/home.html'))
-        
-//     }
-//     else{
-//         res.send('User not found');
-//     }
-
-//     } 
-
-    
-//     catch (error) {
-//         res.status(400).send("Invalid Username")
-//     }
-
-
-
-
-// });
 
 
 app.listen(port,()=>{

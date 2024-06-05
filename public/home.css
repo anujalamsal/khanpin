@@ -111,32 +111,40 @@ a:hover {
     gap: 20px;
 }
 
-.food-item,.food-item1 {
+.generic,.authentic {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 10px;
     background-color: #fff;
 }
 
-.food-item img,.food-item1 img {
+.generic img,.authentic img {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 10px;
 }
 
-.food-item h3,.food-item1 h3 {
+.generic h3,.authentic h3 {
     font-size: 18px;
     margin-bottom: 5px;
     color: #333;
 }
 
-.food-item p, .food-item1 p {
+.generic p, .authentic p {
     font-size: 14px;
     color: #666;
     margin-bottom: 10px;
 }
 
-.food-item a,.food-item1 a {
+.authentic button,.generic button {
+    font-size: 14px;
+    color: #C85B43;
+    text-decoration: none;
+    border:none;
+    padding:5px;
+}
+
+.authentic a,.generic a {
     font-size: 14px;
     color: #C85B43;
     text-decoration: none;

@@ -20,13 +20,13 @@ cpassword:{
     type:String,
     required:true
 },
-tokens:[{
-    token:{
-        type:String,
-        required:true
-    }
+tokens:
+{
+    type:String,
+    required:true
+}
 
-}]
+
 });
 
 //generating token
@@ -35,9 +35,9 @@ try {
     console.log(this._id);
     const token=jwt.sign({_id:this._id.toString()},"khanpintherecipebook")
     console.log(token);
-    this.tokens=this.tokens.concat({token});
+    this.tokens=token;
     await this.save();
-    return token
+    return token;
 
 } catch (error) {
     
