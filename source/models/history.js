@@ -15,6 +15,17 @@ const foodSchema=new mongoose.Schema({
    province:{
     type:String,
     required:false
+   },
+
+   link:{
+      type:String,
+      required:true
+   },
+
+   image:
+   {
+      type:String,
+      required:true
    }
 });
 

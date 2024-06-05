@@ -236,14 +236,14 @@
                         <h3>Anadi ko kheer</h3>
                         <p>A sweet dish.</p>
                         <!-- <a href="anadi.html" target="_blank">Recipe Book</a> -->
-                        <button class="a-food" id="anadi">Recipe Book</button>
+                        <button class="a-food" id="anadhikokheer">Recipe Book</button>
                         <p>  <a href="https://www.youtube.com/watch?v=SvH05FsniQk&pp=ygUOYW5hZGkga28ga2hlZXI%3D" target="_blank">YouTube Link</a>
                     </div><div class="authentic">
                         <img src="faparkoguldu.jpg" alt="rabdi">
                         <h3>Fapar ko guldu</h3>
                         <p>Fapar ko Guldu (Buckwheat Guldu) is one of the traditional food recipes of the Far-West region of Nepal. </p>
                         <!-- <a href="fapar.html" target="_blank">Recipe Book</a> -->
-                        <button class="a-food" id="fapar">Recipe Book</button>
+                        <button class="a-food" id="faparkoguldu">Recipe Book</button>
                         <p>  <a href="https://www.youtube.com/watch?v=IuxrotLwJWk&pp=ygUNZmFwYXJrbyBhdWxkdQ%3D%3D" target="_blank">YouTube Link</a>
                     </div>
                     <div class="authentic">
@@ -251,7 +251,7 @@
                         <h3>Kachari bariya</h3>
                         <p>A dish of Tharu community made with pulse(dal).</p>
                         <!-- <a href="kachari.html" target="_blank">Recipe Book</a> -->
-                        <button class="a-food" id="kachari">Recipe Book</button>
+                        <button class="a-food" id="kacharibariya">Recipe Book</button>
                         <p>  <a href="https://www.youtube.com/watch?v=DPVXuBciegE&pp=ygUOa2FjaGFyaSBiYXJpeWE%3D" target="_blank">YouTube Link</a>
                     </div>
                     <div class="authentic">
@@ -290,7 +290,29 @@
     </div>
 
 <script>
-    
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => {
+  button.addEventListener('click', (e) => {
+    const id = e.target.id;
+    const className = e.target.className;
+
+    const htmlFileName=`${id}.html`;
+    window.location.href = htmlFileName;
+
+
+    fetch('/button', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ id, className, name })
+    })
+   .then(response => response.json())
+   .then(data => console.log(data))
+   .catch(error => console.error(error));
+  });
+});
 </script>
 
 

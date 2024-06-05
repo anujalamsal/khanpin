@@ -15,12 +15,20 @@ body {
     background-color: #f7b0a0;
     padding: 20px;
     box-sizing: border-box;
-    position:fixed;
 }
 
 .left-side h1 {
     margin-bottom: 20px;
     color: white;
+}
+a {
+    color: #C85B43;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d88370;
+    text-decoration: none;
 }
 
 .buttons {
@@ -142,20 +150,6 @@ body {
     }
 }
 
-
-@media (min-width: 768px) {
-    .container {
-        flex-direction: row;
-    }
-
-    .left-side {
-        width: 25%;
-    }
-
-    .right-side {
-        width: 75%;
-    }
-}
 
 
 body {

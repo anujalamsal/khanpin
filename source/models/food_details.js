@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 
-const foodetais=new mongoose.Schema({
+const foodetails=new mongoose.Schema({
 
    name:{
     type:String,
@@ -25,9 +25,14 @@ const foodetais=new mongoose.Schema({
    link:{
     type:String,
     required:true
+   },
+
+   type:{
+      type:String,
+      required:true
    }
 
 });
 
-const History=new mongoose.model("History",foodSchema);
-module.exports=History;
+const Details=new mongoose.model("Details",foodetails);
+module.exports=Details;
