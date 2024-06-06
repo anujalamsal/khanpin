@@ -1,14 +1,14 @@
 const authentic_food=[
 {  name:"tongba",
     taste:"sour",
-    province:1,
+    province:"koshi",
     level:'difficult',
     link:'tongba.html',
     img:'tongba.jpg'
 },
 {  name:"bambaisan",
     taste:"sweet",
-    province:1,
+    province:"koshi",
     level:'medium',
     link:'bambaisan.html',
     img:'bambaisan.jpg'
@@ -16,7 +16,7 @@ const authentic_food=[
 
 {   name:"kinema",
     taste:"salty",
-    province:1,
+    province:"koshi",
     level:"difficult",
     link:'kinema.html',
     img:'kinema.jpg'
@@ -168,7 +168,7 @@ const authentic_food=[
 {
     name:"chyang",
     taste:"sour",
-    province:"",
+    province:"karnali",
     level:"hard",
     link:'chyang.html',
     img:'chyang.jpg'
@@ -177,7 +177,7 @@ const authentic_food=[
 {
     name:"kanchemba",
     taste:"salty",
-    province:"",
+    province:"sudurpaschim",
     level:"easy",
     link:'kanchemba.html',
     img:'kanchemba.jpg'
@@ -186,7 +186,7 @@ const authentic_food=[
 {
     name:"thenthuk",
     taste:"spicy",
-    province:"",
+    province:"karnali",
     level:"easy",
     link:'thenthuk.html',
     img:'thenthuk.jpg'
@@ -195,7 +195,7 @@ const authentic_food=[
 {
     name:"tarul",
     taste:"earthy",
-    province:"",
+    province:"karnali",
     level:"easy",
     link:'tarul.html',
     img:'tarul.jpg'
@@ -203,3 +203,5 @@ const authentic_food=[
 
 
 ];
+
+module.exports=authentic_food;

@@ -63,4 +63,6 @@ const generic_food=[
         img:'yomari.jpg'
     },
 
-]
+];
+
+module.exports=generic_food;

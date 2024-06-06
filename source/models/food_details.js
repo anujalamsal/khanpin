@@ -30,6 +30,11 @@ const foodetails=new mongoose.Schema({
    type:{
       type:String,
       required:true
+   },
+
+   level:{
+      type:String,
+      required:true
    }
 
 });

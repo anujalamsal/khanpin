@@ -13,7 +13,7 @@
         <div class="left-side">
             <h1><a href="/home">Khan Pin</a></h1>
             <div class="buttons">
-                <a href="/recommendation"> <button> <i class='bx bx-dish' ></i>Recommendation</button></a>
+                <a href="/recommendation"> <button id="recommendation"> <i class='bx bx-dish' ></i>Recommendation</button></a>
                 <a href="/map"> <button><i class='bx bx-map' ></i> Map</button></a>
                 <a href="/saved"><button> <i class='bx bx-heart'></i>Saved Recipes</button></a>
                 <a href="/"><button><i class='bx bxs-user'></i>Sign out</button></a>
@@ -306,13 +306,31 @@ buttons.forEach(button => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ id, className, name })
+      body: JSON.stringify({ id, className})
     })
    .then(response => response.json())
    .then(data => console.log(data))
    .catch(error => console.error(error));
   });
 });
+
+const r_button=document.getElementById('recommendation');
+
+r_button.addEventListener('click',()=>{
+    fetch('/recommendation')
+    .then(response => response.json())
+    .then(data => {"Recommendation"})
+    .catch(error => {
+      console.error(error);
+    });
+
+})
+
+
+
+
+
+
 </script>
 
 

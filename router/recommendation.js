@@ -6,4 +6,6 @@ Router.get('/recommendation',(req,res)=>{
     res.sendFile(path.resolve(__dirname,'../final/recommendation.html'))
 });
 
+Recommendation.post('/recommendation',(req,res))
+
 module.exports=Router;
