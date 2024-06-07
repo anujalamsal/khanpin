@@ -13,9 +13,10 @@
         <div class="left-side">
             <h1><a href="/home">Khan Pin</a></h1>
             <div class="buttons">
-                <a href="/recommendation"> <button id="recommendation"> <i class='bx bx-dish' ></i>Recommendation</button></a>
+                <form action="/recommendation" method="POST">
+                    <button id="recommendation"> <i class='bx bx-dish' ></i>Recommendation</button>
+                </form>
                 <a href="/map"> <button><i class='bx bx-map' ></i> Map</button></a>
-                <a href="/saved"><button> <i class='bx bx-heart'></i>Saved Recipes</button></a>
                 <a href="/"><button><i class='bx bxs-user'></i>Sign out</button></a>
             </div>
         </div>
@@ -314,25 +315,19 @@ buttons.forEach(button => {
   });
 });
 
-const r_button = document.getElementById('recommendation');
+// const r_button = document.getElementById('recommendation');
 
-const msg='Reached Post action of recommendation'
-r_button.addEventListener('click', () => {
-  fetch('/recommendation', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ msg })
-  })
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
-});
-
-
-
-
-
-
+// const msg='Reached Post action of recommendation'
+// r_button.addEventListener('click', () => {
+//   fetch('/recommendation', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({ msg })
+//   })
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+//   .catch(error => console.error(error));
+// });
 </script>
 
 

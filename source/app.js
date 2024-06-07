@@ -24,6 +24,10 @@ const Details=require('./models/food_details');
 const authenticData=require('./data_for_db/authentic_data');
 const genericData=require('./data_for_db/generic_data');
 
+app.set('views', path.join(__dirname, '../views'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
+
 authenticData.forEach((data) => {
   Details.findOne({ name: data.name }).exec()
  .then((foundData) => {
