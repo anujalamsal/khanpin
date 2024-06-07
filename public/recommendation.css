@@ -52,6 +52,7 @@ body {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .right-side input[type="text"] {
@@ -62,6 +63,57 @@ body {
     font-size: 16px;
     box-sizing: border-box;
     margin-bottom: 20px;
+}
+
+.recommendations {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.recommendation {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.image-container {
+    flex: 0 0 150px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-container {
+    flex: 1;
+    padding: 10px;
+}
+
+.text-container h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.text-container p {
+    margin: 0;
+    color: #555;
+}
+
+a {
+    color: #C85B43;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d88370;
+    text-decoration: none;
 }
 
 .filters {
@@ -120,9 +172,6 @@ body {
     text-decoration: none;
 }
 
-
-
-
 @media (min-width: 768px) {
     .filters select {
         width: calc(50% - 5px);
@@ -140,86 +189,6 @@ body {
     .food-items {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
-}
-
-
-@media (min-width: 768px) {
-    .container {
-        flex-direction: row;
-    }
-
-    .left-side {
-        width: 25%;
-    }
-
-    .right-side {
-        width: 75%;
-    }
-}
-
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.left-side {
-    width: 100%;
-    background-color: #f7b0a0;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.left-side h1 {
-    margin-bottom: 20px;
-    color: white;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-}
-
-.buttons a {
-    text-decoration: none;
-}
-
-.buttons button {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none;
-    background-color: #C85B43;
-    color: white;
-    font-size: 16px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-}
-
-.buttons button i {
-    margin-right: 10px;
-}
-
-.right-side {
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.right-side input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    box-sizing: border-box;
 }
 
 @media (min-width: 768px) {

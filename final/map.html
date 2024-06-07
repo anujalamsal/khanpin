@@ -12,8 +12,8 @@
         <div class="left-side">
             <h1>Khan Pin</h1>
             <div class="buttons">
-                <a href="recommendation.html"><button><i class='bx bx-dish'></i>Recommendation</button></a>
-                <a href="map.html"><button><i class='bx bx-map'></i>Map</button></a>
+                <a href="/recommendation"><button id="recommendation"><i class='bx bx-dish'></i>Recommendation</button></a>
+                <a href="/map"><button><i class='bx bx-map'></i>Map</button></a>
                 <a href="saved.html"><button><i class='bx bx-heart'></i>Saved Recipes</button></a>
                 <a href="#"><button><i class='bx bxs-user'></i>Sign out</button></a>
             </div>
@@ -44,5 +44,21 @@
         </div>
     </div>
     <script src="recipe.js"></script>
+    <script>
+        const r_button = document.getElementById('recommendation');
+
+const msg='Reached Post action of recommendation'
+r_button.addEventListener('click', () => {
+  fetch('/recommendation', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ msg })
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+});
+
+    </script>
 </body>
 </html>
