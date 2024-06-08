@@ -9,7 +9,7 @@ Router.get('/',(req,res)=>{
         res.sendFile(path.resolve(__dirname,'../final/index.html'))
     });
 
-Router.post("/",async(req,res)=>{
+Router.post('/',async(req,res)=>{
 
         try {
             const username=req.body.username;

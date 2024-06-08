@@ -18,7 +18,8 @@ const recommendation=require('../router/recommendation');
 const forgotpassword=require('../router/forgotpassword');
 const map=require('../router/map');
 const resetpassword=require('../router/reset-password');
-const button=require('../router/button')
+const button=require('../router/button');
+
 
 const Details=require('./models/food_details');
 const authenticData=require('./data_for_db/authentic_data');
@@ -89,6 +90,14 @@ app.use('/',map);
 app.use('/',resetpassword);
 
 app.use('/',button);
+
+app.post('/getElement',async(req,res)=>{
+  let payload=req.body.payload.trim();
+  // console.log(payload);
+  let search=await Details.find({name:{$regex:new RegExp('^'+payload+'.*','i')}}).exec();
+  search=search.slice(0,10);
+  res.send({payload:search});
+})
 
 
 

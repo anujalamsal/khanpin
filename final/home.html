@@ -21,7 +21,8 @@
             </div>
         </div>
         <div class="right-side">
-            <input type="text" placeholder="Search for recipes...">
+            <input type="text" placeholder="Search for recipes..." id="search-box" onkeyup="sendData(this)">
+            <section id="searchResults"></section>
             <h4>Filter By:</h4>
             <div class="filters">
                 
@@ -328,6 +329,45 @@ buttons.forEach(button => {
 //   .then(data => console.log(data))
 //   .catch(error => console.error(error));
 // });
+
+function sendData(e){
+    const searchResults=document.getElementById('searchResults');
+    let match=e.value.match(/^[a-zA-Z]*/);
+    let match2=e.value.match(/\s*/);
+
+    if(match2[0]===e.value)
+    {
+        searchResults.innerHTML='';
+        return;
+    }
+
+    if(match[0]===e.value){fetch('getElement',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({payload:e.value})
+    }).then(res=>res.json()).then(data=>{
+
+        let payload=data.payload;
+        searchResults.innerHTML='';
+        if(payload.length<1)
+        {
+            searchResults.innerHTML='<p>Sorry. Nothing Found.</p>'
+        }
+        payload.forEach((item,index)=>{
+            if(index>0) searchResults.innerHTML+='<hr>';
+            searchResults.innerHTML+=`<p><a href="${item.link}">${item.name}</a></p>`
+        })
+        return;
+    });
+
+
+        
+
+    };
+}
+
+
+
 </script>
 
 
