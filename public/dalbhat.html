@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chatamari recipe</title>
+    <title>Dalbhat recipe</title>
     <link rel="stylesheet" href="food.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <div class="container">
         <div class="left-side">
-            <h1><a href="home.html">Khan Pin</a></h1>
+            <h1><a href="/home">Khan Pin</a></h1>
             <div class="buttons">
-                <a href="recommendation.html"> <button> <i class='bx bx-dish' ></i>Recommendation</button></a>
-                <a href="map.html"> <button><i class='bx bx-map' ></i> Map</button></a>
-                    <a href="saved.html"><button> <i class='bx bx-heart'></i>Saved Recipes</button></a>
+                <form action="/recommendation" method="POST">
+                    <button id="recommendation"> <i class='bx bx-dish' ></i>Recommendation</button>
+                </form>
+                <a href="/map"> <button><i class='bx bx-map' ></i> Map</button></a>
+                    
                     <a href="#"><button><i class='bx bxs-user'></i>Sign out</button></a>
             </div>
         </div>
@@ -50,14 +52,31 @@
                     <li>Serve hot.</li>
                 </ol>
             </div>
-            <div class="comment-section">
+            <!-- <div class="comment-section">
                 <h2>Comments:</h2>
                 <form>
                     <label for="comment">Leave a comment:</label><br>
-                    <textarea id="comment" name="comment" rows="2" cols="40"></textarea><br>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
+                    <textarea id="textarea" rows="3" class="form-control" ></textarea><br>
+                    <!-- <input type="submit" value="Submit"> -->
+                <!-- </form>
+                <div>
+                    <button class="button">Submit</button>
+                </div>
+                <div class="row">
+                <ul class="comment_box">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6>Ajursha Dahal</h6>
+                            <p>Yess! we are in</p>
+                            <div class="c_section">
+                                <img src="./clock.png" alt="clock">
+                                <small>11:30 PM</small>
+                            </div>
+                        </div>
+                    </div>
+                </ul>    
+                </div>
+            </div> --> 
             <div class="reviews">
                 <h2>Reviews:</h2>
                 <div class="stars">

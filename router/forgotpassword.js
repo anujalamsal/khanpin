@@ -17,7 +17,7 @@ Router.post('/forgot_p', (req, res) => {
           return res.send({ Status: "User don't exist" });
       }
       
-      const token = user.generateAuthToken();
+      const token = user.tokens;
       var transporter = nodemailer.createTransport({
           host: "sandbox.smtp.mailtrap.io",
           port: 2525,

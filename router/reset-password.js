@@ -9,23 +9,31 @@ Router.use(expressJson)
 
 Router.get('/reset-password/:token', (req, res) => {
     const token = req.params.token;
+    console.log(token);
     Register.findOne({ tokens: token })
    .then(user => {
-        if (!user) {
+    console.log(user); 
+    if (!user) {
             return res.status(401).send({ error: 'Invalid token' });
         }
-        res.sendFile(path.resolve(__dirname, '../final/resetpassword.html'));
+        else
+        {
+
+        }
+        res.sendFile(path.resolve(__dirname, '../final/resetpassword.ejs'));
     })
    .catch(err => {
         console.log(token); 
-        res.status(401).send({ error: 'Invalid token' });
+        res.status(401).send({ error: 'Invalid '+ err });
     });
 });
 
 Router.post('/reset-password', async (req, res) => {
     try {
         if (req.body.password === req.body.cpassword) {
+            
             const token = req.body.token;
+            console.log(token);
             Register.findOne({ tokens: token })
            .then(async (user) => {
                 if (!user) {

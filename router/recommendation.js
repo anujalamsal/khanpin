@@ -17,6 +17,7 @@ Router.post('/recommendation',async(req,res)=>{
     // console.log(req.body.msg);
     try {
         const suggestions = await Suggestion.find().exec(); 
+        console.log(suggestions);
         res.render('recommendation', { suggestions: suggestions });
         // res.redirect('/recommendation')
       } catch (err) {

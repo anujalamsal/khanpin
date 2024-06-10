@@ -209,15 +209,38 @@ body {
     box-sizing: border-box;
 }
 
-.right-side input[type="text"] {
+/* .right-side input[type="text"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     box-sizing: border-box;
+} */
+
+/* .comment-section input[type="submit"] {
+    background-color: #C85B43;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+} */
+
+/* .comment-section input[type="submit"]:hover {
+    background-color: #d07763;
+} */
+
+.button:hover{
+    background-color: #d07763;
 }
-.comment-section input[type="submit"] {
+
+.button{
+    /* width: 20%; */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
     background-color: #C85B43;
     color: white;
     padding: 5px 10px;
@@ -225,18 +248,30 @@ body {
     cursor: pointer;
 }
 
-.comment-section input[type="submit"]:hover {
-    background-color: #d07763;
+.card
+{margin:5px;
+background-color: rgb(205, 192, 192);
 }
 
+.c_section
+{
+    display:inline-block;
+}
 
 .stars {
+    
     font-size: 24px;
     color: #ffcc00;
+    border:solid,grey;
+    border-width: 1px;
+    display: inline-block;
+    padding:3px;
+
 }
 
 .star {
     cursor: pointer;
+    margin:1px;
 }
 
 .star:hover,
@@ -252,9 +287,13 @@ body {
 
     .left-side {
         width: 25%;
+        position: fixed;
+        top: 0;
+
     }
 
     .right-side {
         width: 75%;
+        margin-left:25%
     }
 }

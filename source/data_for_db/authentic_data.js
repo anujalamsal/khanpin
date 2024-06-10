@@ -73,7 +73,7 @@ const authentic_food=[
     province:"bagmati",
     level:"easy",
     link:'samaybaji.html',
-    img:'samaybaji.jpg'
+    img:'samay baji.jpg'
 
 },
 

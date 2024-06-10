@@ -10,11 +10,13 @@
 <body>
     <div class="container">
         <div class="left-side">
-            <h1><a href="home.html">Khan Pin</a></h1>
+            <h1><a href="/home">Khan Pin</a></h1>
             <div class="buttons">
-                <a href="recommendation.html"> <button> <i class='bx bx-dish' ></i>Recommendation</button></a>
-                <a href="map.html"> <button><i class='bx bx-map' ></i> Map</button></a>
-                    <a href="saved.html"><button> <i class='bx bx-heart'></i>Saved Recipes</button></a>
+                <form action="/recommendation" method="POST">
+                    <button id="recommendation"> <i class='bx bx-dish' ></i>Recommendation</button>
+                </form>
+                <a href="/map"> <button><i class='bx bx-map' ></i> Map</button></a>
+                   
                     <a href="#"><button><i class='bx bxs-user'></i>Sign out</button></a>
             </div>
         </div>

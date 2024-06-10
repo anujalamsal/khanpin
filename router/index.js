@@ -20,6 +20,9 @@ Router.post('/',async(req,res)=>{
         
     
         if(isMatch){
+                
+                // localStorage.setItem("login",true);
+                res.cookie('login',true ,{ maxAge: 900000, httpOnly: true });
                 res.status(201).sendFile(path.resolve(__dirname,'../final/home.html'))
             
         }

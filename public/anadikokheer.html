@@ -10,11 +10,13 @@
 <body>
     <div class="container">
         <div class="left-side">
-            <h1><a href="home.html">Khan Pin</a></h1>
+            <h1><a href="/home">Khan Pin</a></h1>
             <div class="buttons">
-                <a href="recommendation.html"> <button> <i class='bx bx-dish' ></i>Recommendation</button></a>
-                <a href="map.html"> <button><i class='bx bx-map' ></i> Map</button></a>
-                    <a href="saved.html"><button> <i class='bx bx-heart'></i>Saved Recipes</button></a>
+                <form action="/recommendation" method="POST">
+                    <button id="recommendation"> <i class='bx bx-dish' ></i>Recommendation</button>
+                </form>
+                <a href="/map"> <button><i class='bx bx-map' ></i> Map</button></a>
+                    
                     <a href="#"><button><i class='bx bxs-user'></i>Sign out</button></a>
             </div>
         </div>
@@ -53,14 +55,14 @@
                             <li>Serve the kheer chilled or at room temperature, garnished with silver leaf if desired. Enjoy the creamy and delicious Anadi ko Kheer!</li>
                         </ol>
                     </div>
-                    <div class="comment-section">
+                    <!-- <div class="comment-section">
                         <h2>Comments:</h2>
                         <form>
                             <label for="comment">Leave a comment:</label><br>
                             <textarea id="comment" name="comment" rows="2" cols="40"></textarea><br>
                             <input type="submit" value="Submit">
                         </form>
-                    </div>
+                    </div> -->
                     <div class="reviews">
                         <h2>Reviews:</h2>
                         <div class="stars">
