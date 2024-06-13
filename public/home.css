@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    padding:0;
+    margin:0;
 }
 
 .container {
@@ -10,54 +10,48 @@ body {
 }
 
 .left-side {
-    width: 25%;
-    background-color: #f7b0a0;
-    padding: 20px;
+    background-color: #00416A;
+    padding: 10px;
     box-sizing: border-box;
     position: fixed;
     height: 100%;
-    overflow-y: auto; /* Allows scrolling within the left side if the content overflows */
+    overflow-y: auto; 
 }
 
 a {
-    color: #C85B43;
+    color:#240952; 
     text-decoration: none;
 }
 
 a:hover {
-    color: #d88370;
+    color:rgb(160, 136, 136);
     text-decoration: none;
 }
 
 .left-side h1 {
     margin-bottom: 20px;
-    color: white;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: column;
 }
 
 .buttons a {
     text-decoration: none;
 }
 
+
 .buttons button {
-    margin-bottom: 10px;
-    padding: 10px;
+    padding: 10px ;
     border: none;
-    background-color: #C85B43;
-    color: white;
+    background-color: white;
+    color: #002570;
     font-size: 16px;
     text-align: left;
     display: flex;
-    align-items: center;
+    margin-bottom: 10px;
 }
 
 .buttons button i {
-    margin-right: 10px;
+    margin-right: 20px;
 }
+
 
 .right-side {
     width: 75%;
@@ -65,16 +59,18 @@ a:hover {
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
+    background-color: white; 
 }
 
 .right-side input[type="text"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #8A2BE2; 
     border-radius: 4px;
     font-size: 16px;
     box-sizing: border-box;
     margin-bottom: 20px;
+    
 }
 
 .filters {
@@ -84,16 +80,18 @@ a:hover {
 .filters h4 {
     font-size: 16px;
     margin-bottom: 10px;
-    color: #333;
+    color: #00416A; 
+
 }
 
 .filters select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #8A2BE2; 
     border-radius: 4px;
     font-size: 16px;
     margin-bottom: 10px;
+    color: #240952; 
 }
 
 .food-section {
@@ -102,7 +100,7 @@ a:hover {
 
 .food-section h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #00416A; 
 }
 
 .food-items {
@@ -111,50 +109,57 @@ a:hover {
     gap: 20px;
 }
 
-.generic,.authentic {
-    border: 1px solid #ccc;
+
+  .filtered {
+    flex: 23% ; /* Each filtered item takes up 100% width */
+  }
+  
+
+.generic, .authentic {
+    border: 1px solid #8A2BE2;
     border-radius: 8px;
     padding: 10px;
-    background-color: #fff;
+    background-color: white; 
 }
 
-.generic img,.authentic img {
+.generic img, .authentic img {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 10px;
 }
 
-.generic h3,.authentic h3 {
+.generic h3, .authentic h3 {
     font-size: 18px;
     margin-bottom: 5px;
-    color: #333;
+    color: #00416A; 
+   
 }
 
 .generic p, .authentic p {
     font-size: 14px;
-    color: #666;
+    color: #240952;
     margin-bottom: 10px;
 }
 
-.authentic button,.generic button {
+.authentic button, .generic button {
     font-size: 14px;
-    color: #C85B43;
+    color: #00416A; 
     text-decoration: none;
-    border:none;
-    padding:5px;
+    border: none;
+    padding: 5px;
 }
 
-.authentic a,.generic a {
+.authentic a, .generic a {
     font-size: 14px;
-    color: #C85B43;
+    color: #00416A; 
     text-decoration: none;
 }
 
-h3{
+h3 {
     font-size: 16px;
     font-weight: bolder;
+    color: #00416A; 
 }
-
 
 @media (min-width: 768px) {
     .container {
@@ -168,6 +173,7 @@ h3{
     .right-side {
         width: 75%;
     }
+
     .filters {
         display: flex;
         flex-direction: row;
@@ -178,15 +184,34 @@ h3{
         margin-right: 10px;
     }
 
-    .food-item,.food-item1 {
+    .food-item, .food-item1 {
         padding: 8px;
     }
 
-    .food-item img,.food .food-item1 {
+    .food-item img, .food .food-item1 {
         margin-bottom: 8px;
     }
 
     .food-items {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-side {
+        width: 100%;
+        position: relative;
+        height: auto;
+        padding-bottom: 20px; 
+        overflow-y: initial; 
+    }
+
+    .right-side {
+        width: 100%;
+        margin-left: 0;
     }
 }
