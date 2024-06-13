@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color:#00416A;
 }
 
 .container {
@@ -12,9 +13,10 @@ body {
 
 .left-side {
     width: 100%;
-    background-color: #f7b0a0;
+    background-color: #00416A;
     padding: 20px;
     box-sizing: border-box;
+    height:100vh;
 }
 
 .left-side h1 {
@@ -22,12 +24,12 @@ body {
     color: white;
 }
 a {
-    color: #C85B43;
+    color: #240952;
     text-decoration: none;
 }
 
 a:hover {
-    color: #d88370;
+    color: rgb(160, 136, 136);
     text-decoration: none;
 }
 
@@ -36,24 +38,25 @@ a:hover {
     flex-direction: column;
 }
 
+
 .buttons a {
     text-decoration: none;
 }
 
+
 .buttons button {
-    margin-bottom: 10px;
-    padding: 10px;
+    padding: 10px ;
     border: none;
-    background-color: #C85B43;
-    color: white;
+    background-color: white;
+    color: #002570;
     font-size: 16px;
     text-align: left;
     display: flex;
-    align-items: center;
+    margin-bottom: 10px;
 }
 
 .buttons button i {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .right-side {
@@ -62,193 +65,7 @@ a:hover {
     box-sizing: border-box;
 }
 
-.right-side input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-}
-
-.filters {
-    margin-bottom: 20px;
-}
-
-.filters h4 {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.filters select {
-    width: 80%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.food-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.food-item {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    background-color: #fff;
-}
-
-.food-item img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.food-item h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.food-item p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.food-item a {
-    font-size: 14px;
-    color: #C85B43;
-    text-decoration: none;
-}
-
-
-
-
-@media (min-width: 768px) {
-    .filters select {
-        width: calc(50% - 5px);
-        margin-right: 10px;
-    }
-
-    .food-item {
-        padding: 8px;
-    }
-
-    .food-item img {
-        margin-bottom: 8px;
-    }
-
-    .food-items {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-}
-
-
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    height:100vh;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.left-side {
-    width: 100%;
-    background-color: #f7b0a0;
-    padding: 20px;
-    box-sizing: border-box;
-    height:100%;
-}
-
-.left-side h1 {
-    margin-bottom: 20px;
-    color: white;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-}
-
-.buttons a {
-    text-decoration: none;
-}
-
-.buttons button {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none;
-    background-color: #C85B43;
-    color: white;
-    font-size: 16px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-}
-
-.buttons button i {
-    margin-right: 10px;
-}
-
-.right-side {
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* .right-side input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    box-sizing: border-box;
-} */
-
-/* .comment-section input[type="submit"] {
-    background-color: #C85B43;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-} */
-
-/* .comment-section input[type="submit"]:hover {
-    background-color: #d07763;
-} */
-
-.button:hover{
-    background-color: #d07763;
-}
-
-.button{
-    /* width: 20%; */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    box-sizing: border-box;
-    background-color: #C85B43;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-}
-
-.card
+/*.card
 {margin:5px;
 background-color: rgb(205, 192, 192);
 }
@@ -279,7 +96,7 @@ background-color: rgb(205, 192, 192);
     color: #ffdf88;
 
 }
-
+*/
 @media (min-width: 768px) {
     .container {
         flex-direction: row;
