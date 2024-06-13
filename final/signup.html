@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sign up</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="signup.css">
 </head>
 <body>
-    <form action="/signup" method="POST">
-    <h1>Sign Up</h1>
-    <div class="username">
-        <h4>Username</h4>
-        <input type="text" name="username">
+    <div class="container">
+        <div class="left-side">
+            <img src="newlogo.png" alt="Logo">
+        </div>
+        <div class="right-side">
+            <form action="/signup" method="POST">
+                <h1>Sign Up</h1>
+                <div class="username">
+                    <h4>Username</h4>
+                    <input type="text" name="username" required>
+                </div>
+                <div class="email">
+                    <h4>Email</h4>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="password">
+                    <h4>Password</h4>
+                    <input type="password" name="password" required>
+                </div>
+                <div class="confirm">
+                    <h4>Confirm Password</h4>
+                    <input type="password" name="cpassword" required>
+                </div>
+                <div class="sign">
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="email">
-        <h4>email</h4>
-        <input type="email" name="email">
-    </div>
-    <div class="password">
-        <h4>password</h4>
-        <input type="password" name="password">
-    </div>
-    <div class="confirm">
-        <h4>confirm password</h4>
-        <input type="password" name="cpassword">
-    </div>
-    <div class="sign">
-          <button type="submit">Sign Up</button>
-          
-    </div>
-    </form>
 </body>
 </html>
