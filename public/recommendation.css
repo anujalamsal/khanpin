@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    color: #002570; /* Main font color */
 }
 
 .container {
@@ -13,7 +14,7 @@ body {
 
 .left-side {
     width: 100%;
-    background-color: #f7b0a0;
+    background-color:#240952;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -36,8 +37,8 @@ body {
     margin-bottom: 10px;
     padding: 10px;
     border: none;
-    background-color: #C85B43;
-    color: white;
+    background-color: white;
+    color: #330099;
     font-size: 16px;
     text-align: left;
     display: flex;
