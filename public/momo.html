@@ -4,14 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>momo recipe</title>
-    <link rel="stylesheet" href="recipe.css">
+    <link rel="stylesheet" href="food.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <div class="container">
+        <div class="left-side">
+            <h1><a href="/home">Khan Pin</a></h1>
+            <div class="buttons">
+                <form action="/recommendation" method="POST">
+                    <button id="recommendation"> <i class='bx bx-dish' ></i>Recommendation</button>
+                </form>
+                <a href="/map"> <button><i class='bx bx-map' ></i> Map</button></a>
+                    
+                    <a href="#"><button><i class='bx bxs-user'></i>Sign out</button></a>
+            </div>
+        </div>
+        <div class="right-side">
+            
 
-    <header>
         <h1>Momo Recipe</h1>
         <img src="momo.jpg">
-    </header>
+   
     <div class="container">
         <div class="recipe-info">
             <div class="ingredients">
@@ -40,23 +54,8 @@
                     <li>Serve hot with a dipping sauce of your choice.</li>
                 </ol>
             </div>
-            <div class="comment-section">
-                <h2>Comments:</h2>
-                <form>
-                    <label for="comment">Leave a comment:</label><br>
-                    <textarea id="comment" name="comment" rows="2" cols="40"></textarea><br>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-            <div class="reviews">
-                <h2>Reviews:</h2>
-                <div class="stars">
-                    <span class="star" data-value="1">&#9733;</span>
-                    <span class="star" data-value="2">&#9733;</span>
-                    <span class="star" data-value="3">&#9733;</span>
-                    <span class="star" data-value="4">&#9733;</span>
-                    <span class="star" data-value="5">&#9733;</span>
-                </div>
+            
+            
             </div>
         </div>
     </div>
