@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express=require('express');
 const app=express();
 const port=process.env.PORT || 3;
@@ -28,6 +29,9 @@ const genericData=require('./data_for_db/generic_data');
 app.set('views', path.join(__dirname, '../views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
+
+
+// console.log(process.env.SECRET_KEY);
 
 authenticData.forEach((data) => {
   Details.findOne({ name: data.name }).exec()
@@ -75,6 +79,16 @@ genericData.forEach((data) => {
   });
 });
 
+
+
+
+//   const userVar=await jwt.verify(token,"thisprojectiscreatedforpromotionofauthenticfood");
+//   console.log(userVar)
+
+// }
+
+
+
 app.use('/',index);
 
 app.use('/',signup);
@@ -98,21 +112,6 @@ app.post('/getElement',async(req,res)=>{
   search=search.slice(0,10);
   res.send({payload:search});
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 app.listen(port,()=>{

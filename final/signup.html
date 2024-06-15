@@ -24,11 +24,11 @@
                 </div>
                 <div class="password">
                     <h4>Password</h4>
-                    <input type="password" name="password" required>
+                    <input type="password" name="password" required pattern="^(?=.*[a-zA-Z])(?=.*[0-9]).{5,}$" oninvalid="this.setCustomValidity('Password must be at least 5 characters long and contain at least one letter and one digit')" oninput="this.setCustomValidity('')" >
                 </div>
                 <div class="confirm">
                     <h4>Confirm Password</h4>
-                    <input type="password" name="cpassword" required>
+                    <input type="password" name="cpassword" required pattern="^(?=.*[a-zA-Z])(?=.*[0-9]).{5,}$" oninvalid="this.setCustomValidity('Password must be at least 5 characters long and contain at least one letter and one digit')" oninput="this.setCustomValidity('')">
                 </div>
                 <div class="sign">
                     <button type="submit">Sign Up</button>

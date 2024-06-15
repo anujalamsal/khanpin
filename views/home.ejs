@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Home Page</title>
+<link rel="stylesheet" href="home.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h1><a href="/home">Khan Pin</a></h1>
+            <div class="buttons">
+                <form action="/recommendation" method="POST">
+                    <input type="hidden" name="user_id" value=<%=user_id%>>
+                    <button id="recommendation"> <i class='bx bx-dish' ></i>Recommendation</button>
+                </form>
+                <a href="/map"> <button><i class='bx bx-map' ></i> Map</button></a>
+                <a href="/"><button><i class='bx bxs-user'></i>Sign out</button></a>
+            </div>
+        </div>
+        <div class="right-side">
+            <input type="text" placeholder="Search for recipes..." id="search-box" onkeyup="sendData(this)">
+            <section id="searchResults"></section>
+            <h4>Filter By:</h4>
+            <div class="filters">
+                
+                <select  id="taste" onchange="filterByTaste(this.value)">
+                    <option value="">Taste</option>
+                    <option value="spicy">Spicy</option>
+                    <option value="salty">Salty</option>
+                    <option value="sweet">Sweet</option>
+                    <option value="savory">Savory</option>
+                    <option value="earthy">Earthy</option>
+                    <option value="sour">Sour</option>
+                </select>
+                <select  id="level" onchange="filterByLevel(this.value)">
+                    <option value="">Level</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Difficult</option>
+                </select>
+                <select  id="province" onchange="filterByProvince(this.value)">
+                    <option value="">Province</option>
+                    <option value="koshi">Koshi</option>
+                    <option value="madhesh">Madhesh</option>
+                    <option value="bagmati">Bagmati</option>
+                    <option value="gandaki">Gandaki</option>
+                    <option value="lumbini">Lumbini</option>
+                    <option value="Karnali">Karnali</option>
+                    <option value="sudurpaschim">Sudurpaschim</option>
+                   
+                </select>
+            </div>
+            <h3>Generic foods:</h3>
+            <div class="food-items" id="genericFood">
+                <div class="generic" data-name="dalbhat" data-taste="salty" data-level="easy">
+                    <img src="dal-bhat.jpg" alt="Dal Bhat">
+                    <h3>Dal Bhat</h3>
+                    <p>A traditional Nepali meal consisting of lentil soup (dal) and rice (bhat).</p>
+                    <!-- <a href="dalbhat.html" target="_blank">Recipe Book</a> -->
+                    <button id="dalbhat" class="g-food">Recipe Book</button>
+                   <p> <a href="https://youtu.be/1QF0KAgkZEI?si=tylhr_yJjNlA_Yc8" target="_blank">YouTube Link</a></p>
+                </div>
+                <div class="generic" data-name="momo" data-level="difficult" data-taste="salty" >
+                    <img src="momo.jpg" alt="Momo">
+                    <h3>Momo</h3>
+                    <p>A type of dumpling filled with meat or vegetables, steamed or fried, and served with a dipping sauce.</p>
+                    <!-- <a href="momo.html" target="_blank">Recipe Book</a> -->
+                    <button id="momo" class="g-food">Recipe Book</button>
+                    <p> <a href="https://youtu.be/Hjrb41I8-EQ?si=7KQhL2uFYApESLoC" target="_blank">YouTube Link</a>
+                </div>
+                <div class="generic" data-name="selroti" data-level="difficult" data-taste="sweet">
+                    <img src="sel roti.jpg" alt="Sel Roti">
+                    <h3>Sel Roti</h3>
+                    <p>A traditional Nepali sweet, ring-shaped rice bread/doughnut.</p>
+                    <!-- <a href="selroti.html" target="_blank">Recipe Book</a> -->
+                    <button id="selroti" class="g-food">Recipe Book</button>
+                    <p></p><a href="https://youtu.be/DFfIZw-XXGQ?si=n_l2fY9SDSzFV_Ap" target="_blank">YouTube Link</a>
+                </div>
+                <div class="generic" data-name="dhakani" data-taste="sweet" data-level="easy">
+                    <img src="dhakani.jpg" alt="dhakani">
+                    <h3>Dhakani</h3>
+                    <p>Dhakane (Nepali: ढकने), is a type of sweet Pulao, originated from Nepal a dish made from rice.</p>
+                    <!-- <a href="dhakani.html" target="_blank">Recipe Book</a> -->
+                    <button id="dhakani" class="g-food">Recipe Book</button>
+                    <p> <a href="https://www.youtube.com/watch?v=VlntdXBcktg&pp=ygUNZGhha25pIHJlY2lwZQ%3D%3D" target="_blank">YouTube Link</a>
+                </div>
+                <div class="generic" data-name="mohi" data-level="easy" data-taste="sour">
+                    <img src="mohi.jpg" alt="mohi">
+                    <h3>Mohi</h3>
+                    <p>Mohi is created by skimming the milk and adding a pinch of salt or sugar.</p>
+                    <!-- <a href="mohi.html" target="_blank">Recipe Book</a> -->
+                    <button id="mohi" class="g-food">Recipe Book</button>
+                    <p></p><a href="https://youtu.be/78GU8dFpZSQ?si=JCCOK4eeiqJS3Slq" target="_blank">YouTube Link</a>
+                </div>
+                <div class="generic" data-name="dhindo" data-level="difficult" data-taste="earthy">
+                    <img src="dhindo.jpg" alt="Dhido">
+                    <h3>Dhido</h3>
+                    <p>A traditional Nepali food made from buckwheat or millet.</p>
+                    <!-- <a href="dhindo.html" target="_blank">Recipe Book</a> -->
+                    <button id="dhindo" class="g-food">Recipe Book</button>
+                    <p>  <a href="https://youtu.be/f8VWrerExV8?si=6bf1apHNj-ifeZ_g" target="_blank">YouTube Link</a>
+                </div>
+                <div class="generic" data-name="chhurpi" data-taste="earthy" data-level="difficult">
+                    <img src="chhurpi.jpg" alt="Chhurpi">
+                    <h3>Chhurpi</h3>
+                    <p>A kind of rice crepe.</p>
+                    <!-- <a href="chhurpi.html" target="_blank">Recipe Book</a> -->
+                    <button id="chhurpi" class="g-food">Recipe Book</button>
+                    <p></p><a href="https://youtu.be/6iPdvYPq0Ys?si=1W2OjXePH33HiTP1" target="_blank">YouTube Link</a>
+                </div>
+                <div class="generic" data-name="gundruk" data-level="medium" data-taste="savory">
+                    <img src="gundruk.jpg" alt="Gundruk">
+                    <h3>Gundruk</h3>
+                    <p>A traditional Nepali food made from buckwheat or millet.</p>
+                    <!-- <a href="gundruk.html" target="_blank">Recipe Book</a> -->
+                    <button id="gundruk" class="g-food">Recipe Book</button>
+                    <p>  <a href="https://www.youtube.com/watch?v=OFYt91SobXA&pp=ygUWZ3VuZHJ1ayBiYW5hdW5lIHRhcmlrYQ%3D%3D" target="_blank">YouTube Link</a>
+                </div>
+                </div>
+                <h3>Authentic foods:</h3>
+                <div class="food-items" id="authenticFood">
+                    <div class="authentic" data-name="tongba" data-taste="sour" data-level="difficult" data-province="koshi">
+                        <img src="tongba.jpg" alt="tongba">
+                        <h3>tongba</h3>
+                        <p>Tongba is a millet-based alcoholic beverage. </p>
+                        <!-- <a href="tongba.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="tongba">Recipe Book</button>
+                        <p> <a href="https://www.youtube.com/watch?v=Oaj5R_YP6Q0&pp=ygUVdG9uZ2JhIGJhbmF1bmUgdGFyaWth" target="_blank">YouTube Link</a></p>
+                    </div>
+                    <div class="authentic" data-name="bambaisan" data-level="medium" data-province="koshi" data-taste="sweet">
+                        <img src="bambaisan.jpg" alt="bambaisan">
+                        <h3>Bambaisan</h3>
+                        <p>A rich dairy product that is primarily made from buffalo/ cow milk..</p>
+                        <!-- <a href="bambaisan.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="bambaisan">Recipe Book</button>
+                        <p> <a href="https://youtu.be/oJKr5ZDBWLs?si=LDS_l4INN7duGOs8" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="kinema" data-province="koshi" data-level="difficult" data-taste="salty">
+                        <img src="kinema.jpg" alt="kinema">
+                        <h3>Kinema</h3>
+                        <p>Kinema (Nepali: किनेमा) is a fermented soybean food.</p>
+                        <!-- <a href="kinema.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="kinema">Recipe Book</button>
+                        <p></p><a href="https://www.youtube.com/watch?v=D9tZcxZDRkg&pp=ygUVa2luZW1hIGJhbmF1bmUgdGFyaWth" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="taruwa" data-level="easy" data-province="madhesh" data-taste="salty">
+                        <img src="taruwa.jpg" alt="taruwa">
+                        <h3>Taruwa</h3>
+                        <p>Taruwa is a dish that celebrates local greens and vegetables.</p>
+                        <!-- <a href="taruwa.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="taruwa">Recipe Book</button>
+                        <p> <a href="https://www.youtube.com/watch?v=j3TAdRVE3yI&pp=ygUGdGFydXdh" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="bagiya" data-level="medium" data-taste="sweet" data-province="madhesh">
+                        <img src="bagiya.jpg" alt="bagiya">
+                        <h3>Bagiya</h3>
+                        <p> It is a steamed dumpling that consists of an external covering of rice flour and an inner content of sweet substances such like chaku, vegetables and other fried items.</p>
+                        <!-- <a href="bagiya.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="bagiya">Recipe Book</button>
+                        <p></p><a href="https://www.youtube.com/watch?v=hYH0gCA8j7g&pp=ygUGYmFnaXlh" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="dalpuri" data-level="difficult" data-province="madhesh" data-taste="salty">
+                        <img src="dalpuri.jpg" alt="dalpuri">
+                        <h3>Dalpuri</h3>
+                        <p>Dal Puri or Chana Dal Puri is traditional, authentic recipe of the people of Mithila region of Nepal. </p>
+                        <!-- <a href="dalpuri.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="dalpuri">Recipe Book</button>
+                        <p>  <a href="https://www.youtube.com/watch?v=IqbEVUnQkoQ&pp=ygUNZGFscHVyaSBuZXBhbA%3D%3D" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="chatamari" data-province="bagmati" data-level="easy" data-taste="salty">
+                        <img src="chatamari.jpg" alt="Chatamari">
+                        <h3>Chatamari</h3>
+                        <p>A kind of rice crepe.</p>
+                        <!-- <a href="chatamari.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="chatamari">Recipe Book</button>
+                        <p></p><a href="https://youtu.be/72GqfhCyl8M?si=JKcEO8Ozj5K-HfoZ" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="jujudhau" data-level="medium" data-province="bagmati" data-taste="sweet">
+                        <img src="jujudhau.jpg" alt="jujudhau">
+                        <h3>Jujudhau</h3>
+                        <p>A traditional Nepali food Yogurt. </p>
+                        <!-- <a href="jujudhau.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="jujudhau">Recipe Book</button>
+                        <p>  <a href="https://www.youtube.com/watch?v=mXM4INQWanc&pp=ygUQanVqdSBkaGF1IHJlY2lwZQ%3D%3D" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="samaybaji" data-level="easy" data-province="bagmati" data-taste="salty">
+                        <img src="samay baji.jpg" alt="samay baji">
+                        <h3>Samay baji</h3>
+                        <p>Many dishes served with beaten rice on a single platter. </p>
+                        <!-- <a href="samay baji.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="samaybaji">Recipe Book</button>
+                        <p>  <a href="https://www.youtube.com/watch?v=iMYiXIcSa58&pp=ygUKc2FtYXkgYmFqaQ%3D%3D" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="chukauni" data-level="easy" data-province="gandaki" data-taste="savory">
+                        <img src="chukauni.jpg" alt="chukauni">
+                        <h3>Chukauni</h3>
+                        <p>Chukauni is a potato and yogurt salad tempered with mustard seed and turmeric. </p>
+                        <!-- <a href="chukauni.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="chukauni">Recipe Book</button>
+                        <p>  <a href="https://www.youtube.com/watch?v=bO8aihEF1-o&pp=ygUPY2h1a2F1bmkgcmVjaXBl" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="arsa" data-level="difficult" data-province="gandaki" data-taste="sweet">
+                        <img src="arsa.jpg" alt="arsa">
+                        <h3>Arsa</h3>
+                        <p>A deep-fried delicacy that has a chewy texture that may be flame heated before eating for softness. </p>
+                        <!-- <a href="arsa.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="arsa">Recipe Book</button>
+                        <p>  <a href="https://www.youtube.com/watch?v=pNjeaMCW-BU&pp=ygUEYXJzYQ%3D%3D" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="batuk" data-level="medium" data-province="gandaki" data-taste="salty">
+                        <img src="batuk.jpg" alt="batuk">
+                        <h3>Batuk</h3>
+                        <p>Batuk is usually made from black lentils (maas ko dal) or sometimes from rice beans (masyang).  </p>
+                        <!-- <a href="batuk.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="batuk">Recipe Book</button>
+                        <p>  <a href="https://www.youtube.com/watch?v=5pTNxcKvYPA&pp=ygUFYmF0dWs%3D" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="rabdi" data-level="easy" data-province="lumbini" data-taste="sweet">
+                        <img src="rabdi.jpg" alt="rabdi">
+                        <h3>Rabdi</h3>
+                        <p>A sweet dish made with full fat milk, sugar, cardamoms and nuts.</p>
+                        <!-- <a href="rabdi.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="rabdi">Recipe Book</button>
+                        <p>  <a href="https://www.youtube.com/watch?v=1OT0j9hJBQM&pp=ygUMcmFiZGkgbmVwYWxp" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="sidhra" data-level="medium" data-province="lumbini" data-taste="salty">
+                        <img src="sidhra.jpg" alt="sidhra">
+                        <h3>Sidhra</h3>
+                        <p>A small fish called sidhra is cooked with the stem of a colocasia, turmeric, garlic, radish, and chillies.  </p>
+                        <!-- <a href="sidhra.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="sidhra">Recipe Book</button>
+                        <p>  <a href="https://youtu.be/y4NPzgqSaVo?si=WLcuRMS7raOlAcYl" target="_blank">YouTube Link</a>
+                    </div>
+
+                    <div class="authentic" data-name="anadhikokheer" data-level="easy" data-province="gandaki" data-taste="sweet">
+                        <img src="anadi ko kheer.jpg" alt="anadi">
+                        <h3>Anadi ko kheer</h3>
+                        <p>A sweet dish.</p>
+                        <!-- <a href="anadi.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="anadhikokheer">Recipe Book</button>
+                        <p>  <a href="https://www.youtube.com/watch?v=SvH05FsniQk&pp=ygUOYW5hZGkga28ga2hlZXI%3D" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="faparkoguldu" data-level="difficult" data-province="sudurpaschim" data-taste="savory">
+                        <img src="faparkoguldu.jpg" alt="fapa
+                        rkoguldu">
+                        <h3>Fapar ko guldu</h3>
+                        <p>Fapar ko Guldu (Buckwheat Guldu) is one of the traditional food recipes of the Far-West region of Nepal. </p>
+                        <!-- <a href="fapar.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="faparkoguldu">Recipe Book</button>
+                        <p>  <a href="https://www.youtube.com/watch?v=IuxrotLwJWk&pp=ygUNZmFwYXJrbyBhdWxkdQ%3D%3D" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="kacharibariya" data-level="medium" data-province="sudurpaschim" data-taste="salty">
+                        <img src="kachari.jpg" alt="kachari">
+                        <h3>Kachari bariya</h3>
+                        <p>A dish of Tharu community made with pulse(dal).</p>
+                        <!-- <a href="kachari.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="kacharibariya">Recipe Book</button>
+                        <p>  <a href="https://www.youtube.com/watch?v=DPVXuBciegE&pp=ygUOa2FjaGFyaSBiYXJpeWE%3D" target="_blank">YouTube Link</a>
+                    </div>
+                    <div class="authentic" data-name="kanchemba" data-level="medium" data-province="sudurpaschim" data-taste="salty">
+                        <img src="kanchemba.jpg" alt="kanchemba">
+                        <h3>Kanchemba</h3>
+                        <p>A dish made from wheat flour dough, which is deep-fried and often served with a variety of pickles and curries.</p>
+                        <!-- <a href="kanchemba.html" target="_blank">Recipe Book</a> -->
+                        <button class="a-food" id="kanchemba">Recipe Book</button>
+                        <p><a href="https://www.youtube.com/watch?v=MJ67aZ0yVcE&pp=ygUJa2FuY2hlbWJh" target="_blank">YouTube Link</a></p>
+                        </div>
+                        <div class="authentic" data-name="thenthuk" data-level="easy" data-province="karnali" data-taste="spicy">
+                            <img src="thenthuk.jpg" alt="thenthuk">
+                            <h3>Thenthuk</h3>
+                            <p>A traditional Tibetan noodle soup.</p>
+                            <!-- <a href="thenthuk.html" target="_blank">Recipe Book</a> -->
+                            <button class="a-food" id="thenthuk">Recipe Book</button>
+                            <p><a href="https://www.youtube.com/watch?v=jdHR3m69Kmo&pp=ygUIdGhlbnRodWs%3D" target="_blank">YouTube Link</a></p>
+                            </div>
+                            <div class="authentic" data-name="tarul" data-level="easy" data-province="karnali" data-taste="earthy">
+                                <img src="tarul.jpg" alt="khasi">
+                                <h3>Tarul</h3>
+                                <p>Boiled yam, commonly eaten during the winter months and the Maghe Sankranti festival.</p>
+                                <!-- <a href="tarul.html" target="_blank">Recipe Book</a> -->
+                                <button class="a-food" id="tarul">Recipe Book</button>
+                                <p><a href="https://www.youtube.com/watch?v=E2rrt01CP3E&pp=ygUFdGFydWw%3D" target="_blank">YouTube Link</a></p>
+                                </div>
+                                <div class="authentic" data-name="chyang" data-level="difficult" data-province="karnali" data-taste="sour">
+                                    <img src="chyang.jpg" alt="chyang">
+                                    <h3>Chyang</h3>
+                                    <p>A traditional alcoholic beverage made from fermented barley.</p>
+                                    <!-- <a href="chyang.html" target="_blank">Recipe Book</a> -->
+                                    <button class="a-food" id="chyang">Recipe Book</button>
+                                    <p><a href="https://www.youtube.com/watch?v=e-cQGHfahKc&pp=ygUgY2h5YWtobGEgYmFuYXVuZSB0YXJpa2EgYmV2ZXJhZ2U%3D" target="_blank">YouTube Link</a></p>
+                                    
+        
+                                </div>
+                                <div class="food-items" id="authenticFood">
+                                    <div class="authentic" data-name="tongba" data-taste="sour" data-level="difficult" data-province="koshi">
+                                        <img src="gwarcha.jpg" alt="gwarcha">
+                                        <h3>tongba</h3>
+                                        <p>Gwarcha </p>
+                                        <!-- <a href="tongba.html" target="_blank">Recipe Book</a> -->
+                                        <button class="a-food" id="">Recipe Book</button>
+                                        <p> <a href="https://www.youtube.com/watch?v=Oaj5R_YP6Q0&pp=ygUVdG9uZ2JhIGJhbmF1bmUgdGFyaWth" target="_blank">YouTube Link</a></p>
+                                    </div>
+    </div>
+    
+<script>
+    function filterByTaste(taste) {
+      filterItems(taste, document.getElementById('level').value, document.getElementById('province').value);
+    }
+    
+    function filterByLevel(level) {
+      filterItems(document.getElementById('taste').value, level, document.getElementById('province').value);
+    }
+    
+    function filterByProvince(province) {
+      filterItems(document.getElementById('taste').value, document.getElementById('level').value, province);
+    }
+    
+    function filterItems(taste, level, province) {
+      const foodItems = document.querySelectorAll('.generic, .authentic');
+    
+      foodItems.forEach((item) => {
+        let showItem = true;
+    
+        if (taste !== '' && item.dataset.taste !== taste) {
+          showItem = false;
+        }
+    
+        if (level !== '' && item.dataset.level !== level) {
+          showItem = false;
+        }
+    
+        if (province !== '' && item.dataset.province !== province) {
+          showItem = false;
+        }
+    
+        item.style.display = showItem ? 'block' : 'none';
+      });
+    }
+</script>
+<script>
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => {
+  button.addEventListener('click', (e) => {
+    let user_id='<%=user_id%>';
+    console.log(user_id);
+    const id = e.target.id;
+    const className = e.target.className;
+
+    const htmlFileName=`${id}.html`;
+    window.location.href = htmlFileName;
+
+
+    fetch('/button', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ id, className,user_id})
+    })
+   .then(response => response.json())
+   .then(data => console.log(data))
+   .catch(error => console.error(error));
+  });
+});
+
+
+
+// const msg='Reached Post action of recommendation'
+// r_button.addEventListener('click', () => {
+//   fetch('/recommendation', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({ msg })
+//   })
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+//   .catch(error => console.error(error));
+// });
+
+function sendData(e){
+    const searchResults=document.getElementById('searchResults');
+    let match=e.value.match(/^[a-zA-Z]*/);
+    let match2=e.value.match(/\s*/);
+
+    if(match2[0]===e.value)
+    {
+        searchResults.innerHTML='';
+        return;
+    }
+
+    if(match[0]===e.value){fetch('getElement',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({payload:e.value})
+    }).then(res=>res.json()).then(data=>{
+
+        let payload=data.payload;
+        searchResults.innerHTML='';
+        if(payload.length<1)
+        {
+            searchResults.innerHTML='<p>Sorry. Nothing Found.</p>'
+        }
+        payload.forEach((item,index)=>{
+            if(index>0) searchResults.innerHTML+='<hr>';
+            searchResults.innerHTML+=`<p><a href="${item.link}">${item.name}</a></p>`
+        })
+        return;
+    });
+
+
+        
+
+    };
+}
+
+
+
+</script>
+
+
+</body>
+</html>

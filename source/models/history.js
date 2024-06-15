@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
 
-const foodSchema=new mongoose.Schema({
+
+const foodSchema_h=new mongoose.Schema({
 
    name:{
     type:String,
@@ -32,8 +33,13 @@ const foodSchema=new mongoose.Schema({
    {
       type:String,
       required:true
+   },
+
+   id:{
+      type:String,
+      required:true
    }
 });
 
-const History=new mongoose.model("History",foodSchema);
+const History=new mongoose.model("History",foodSchema_h);
 module.exports=History;

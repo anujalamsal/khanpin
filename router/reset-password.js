@@ -9,7 +9,7 @@ Router.use(expressJson)
 
 Router.get('/reset-password/:token', (req, res) => {
     const token = req.params.token;
-    console.log(token);
+    console.log(token, 'token from reset password');
     Register.findOne({ tokens: token })
    .then(user => {
     console.log(user); 
@@ -20,7 +20,8 @@ Router.get('/reset-password/:token', (req, res) => {
         {
 
         }
-        res.sendFile(path.resolve(__dirname, '../final/resetpassword.ejs'));
+        res.sendFile(path.resolve(__dirname, '../final/resetpassword.html'));
+        // res.redirect('/resetpassword');
     })
    .catch(err => {
         console.log(token); 
@@ -42,7 +43,7 @@ Router.post('/reset-password', async (req, res) => {
                 const password = req.body.password;
                 const newPassword = await bcrypt.hash(password, 10);
                 const userData = await Register.findByIdAndUpdate({ _id: user._id }, { $set: { password: newPassword } }, { new: true });
-                res.status(200).send({ success: true, msg: "User password has been reset", data: userData });
+                res.status(200).send({ success: true, msg: "User password has been reset" });
             })
            .catch(err => {
                 console.log(token);

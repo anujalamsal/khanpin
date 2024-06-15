@@ -8,6 +8,7 @@ const Suggestion=require('../source/models/suggestion');
 Router.post('/button',(req,res)=>{
 const name=req.body.id;
 const type=req.body.className;
+const id=req.body.user_id;
 
 console.log(name+'\n'+type);
 
@@ -20,7 +21,7 @@ if(type==='a-food')
     //to store in history
   { if(data)
     {  
-    History.findOne({ name: data.name }).exec()
+    History.findOne({ name: data.name, id:id}).exec()
     .then((foundData) => {
     if (foundData) {
       console.log('User already exists');
@@ -32,7 +33,8 @@ if(type==='a-food')
         image: data.img,
         link: data.link,
         type: 'authentic',
-        level:data.level
+        level:data.level,
+        id:id
       });
       detail.save();
     }
@@ -50,7 +52,7 @@ if(data)
 authentic_food.forEach((element)=>{
   if(element.taste===taste && element.level===level && element!=data)
   {
-    Suggestion.findOne({ name: element.name }).exec()
+    Suggestion.findOne({ name: element.name, id:id }).exec()
     .then((foundData) => {
     if (foundData) {
       console.log('User exists');
@@ -61,7 +63,8 @@ authentic_food.forEach((element)=>{
         image: element.img,
         link: element.link,
         type: 'authentic',
-        level:element.level
+        level:element.level,
+        id:id
       });
       suggestion.save();
     }
@@ -80,7 +83,7 @@ else if(type==='g-food')
     });
 
     {if(data)
-      {History.findOne({ name: data.name }).exec()
+      {History.findOne({ name: data.name, id:id }).exec()
           .then((foundData) => {
              if (foundData) {
                console.log('User already exists');
@@ -92,7 +95,8 @@ else if(type==='g-food')
                  image: data.img,
                  link: data.link,
                  type: 'generic',
-                 level:data.level
+                 level:data.level,
+                 id:id
                });
                detail.save();
              }
@@ -109,7 +113,7 @@ else if(type==='g-food')
           authentic_food.forEach((element)=>{
             if(element.taste===taste && element.level===level && element!=data)
             {
-              Suggestion.findOne({ name: element.name }).exec()
+              Suggestion.findOne({ name: element.name, id:id }).exec()
               .then((foundData) => {
               if (foundData) {
                 console.log('User  exists');
@@ -120,7 +124,8 @@ else if(type==='g-food')
                   image: element.img,
                   link: element.link,
                   type: 'authentic',
-                  level:element.level
+                  level:element.level,
+                  id:id
                 });
                 suggestion.save();
               }

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recommendation Page</title>
+  <!-- <link rel="stylesheet" href="recommendation.css"> -->
   <style>
     body {
     font-family: Arial, sans-serif;
@@ -166,24 +167,26 @@ a:hover {
       <input type="text" placeholder="Search for recipes...">
       <div class="recommendations">
         <% for (let i = 0; i < suggestions.length; i++) { %>
-          <a href="<%= suggestions[i].link %>" class="container">
-            <div class="recommendation">
-              <div class="image-container">
-                <img src="<%= suggestions[i].image%>" alt="<%= suggestions[i].name %>">
-              </div>
-              <div class="text-container">
-                <h2><%= suggestions[i].name %></h2>
-                <!-- <p>Taste: <%= suggestions[i].taste %></p>
-                <p>Level: <%= suggestions[i].level %></p>
-                <p>Type: <%= suggestions[i].type %></p> -->
-
-                <p><%= suggestions[i].taste %>, <%= suggestions[i].level %>, <%= suggestions[i].type %></p>
-
-                
-              </div>
-            </div>
-          </a>
-        <% } %>
+            <% if (suggestions[i].id === user_id) { %>
+              <a href="<%= suggestions[i].link %>" class="container">
+                <div class="recommendation">
+                  <div class="image-container">
+                    <img src="<%= suggestions[i].image%>" alt="<%= suggestions[i].name %>">
+                  </div>
+                  <div class="text-container">
+                    <h2><%= suggestions[i].name %></h2>
+                    <!-- <p>Taste: <%= suggestions[i].taste %></p>
+                    <p>Level: <%= suggestions[i].level %></p>
+                    <p>Type: <%= suggestions[i].type %></p> -->
+          
+                    <p><%= suggestions[i].taste %>, <%= suggestions[i].level %>, <%= suggestions[i].type %></p>
+          
+                    
+                  </div>
+                </div>
+              </a>
+            <% } %>
+          <% } %>
       </div>
     </div>
   </div>

@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
+require('dotenv').config();
 
-mongoose.connect("mongodb+srv://batsanuja:VvWesKHJ1d9fRpI2@loginregister.qelbyfx.mongodb.net/");
+mongoose.connect(process.env.MONGO_URL);
     mongoose.connection.once('open', function(){
       console.log('Conection has been made!');
     }).on('error', function(error){

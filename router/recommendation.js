@@ -14,11 +14,13 @@ const Suggestion=require('../source/models/suggestion');
 // });
 
 Router.post('/recommendation',async(req,res)=>{
-    // console.log(req.body.msg);
+    
+  const user_id=req.body.user_id;
+
     try {
         const suggestions = await Suggestion.find().exec(); 
         console.log(suggestions);
-        res.render('recommendation', { suggestions: suggestions });
+        res.render('recommendation', { suggestions: suggestions, user_id:user_id });
         // res.redirect('/recommendation')
       } catch (err) {
         console.error(err);

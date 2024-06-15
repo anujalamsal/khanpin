@@ -1,6 +1,8 @@
+require('dotenv').config();
 const mongoose=require('mongoose');
 const bcrypt=require('bcryptjs');
 const jwt=require('jsonwebtoken');
+
 
 const employeeSchema=new mongoose.Schema({
 username:{
@@ -20,8 +22,7 @@ cpassword:{
     type:String,
     required:true
 },
-tokens:
-{
+tokens:{
     type:String,
     required:true
 }
@@ -29,20 +30,24 @@ tokens:
 
 });
 
+
 //generating token
 employeeSchema.methods.generateAuthToken=async function(){
 try {
-    console.log(this._id);
-    const token=jwt.sign({_id:this._id.toString()},"khanpintherecipebook")
-    console.log(token);
+    // console.log(this._id);
+    const token=jwt.sign({_id:this._id.toString()},process.env.SECRET_KEY)
+    // console.log(token);
+    // this.tokens.token=token;
+
+    // this.tokens=this.tokens.concat({token})
     this.tokens=token;
     await this.save();
+    
     return token;
 
 } catch (error) {
     
-    res.send('The error part'+error);
-    console.log('The error part'+error)
+  return false
 
     
 }

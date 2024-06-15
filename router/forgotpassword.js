@@ -4,6 +4,7 @@ const path=require('path');
 const jwt=require('jsonwebtoken');
 const nodemailer=require('nodemailer');
 const Register=require("../source/models/registers");
+const { encodeBase64 } = require('bcryptjs');
 
 Router.get('/forgot_p',(req,res)=>{
     res.sendFile(path.resolve(__dirname,'../final/forgotpassword.html'))
@@ -17,7 +18,10 @@ Router.post('/forgot_p', (req, res) => {
           return res.send({ Status: "User don't exist" });
       }
       
+
+      // console.log(user, '<-----user')
       const token = user.tokens;
+      // console.log(token);
       var transporter = nodemailer.createTransport({
           host: "sandbox.smtp.mailtrap.io",
           port: 2525,
