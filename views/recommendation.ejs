@@ -25,6 +25,7 @@
     background-color: #00416A;
     padding: 20px;
     box-sizing: border-box;
+    height:100vh;
 }
 
 .left-side h1 {
@@ -151,6 +152,8 @@ a:hover {
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+  <!-- <p>User ID: <%= user_id %></p> -->
+  <!-- <p>Suggestions: <%= JSON.stringify(suggestions) %></p> -->
   <div class="container">
     <div class="left-side">
       <h1><a href="/home">Khan Pin</a></h1>
@@ -167,7 +170,9 @@ a:hover {
       <input type="text" placeholder="Search for recipes...">
       <div class="recommendations">
         <% for (let i = 0; i < suggestions.length; i++) { %>
-            <% if (suggestions[i].id === user_id) { %>
+          <% if (suggestions[i].id.toString() === user_id.toString())
+            { %>
+             
               <a href="<%= suggestions[i].link %>" class="container">
                 <div class="recommendation">
                   <div class="image-container">
@@ -191,4 +196,5 @@ a:hover {
     </div>
   </div>
 </body>
+
 </html>

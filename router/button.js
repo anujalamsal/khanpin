@@ -9,11 +9,13 @@ Router.post('/button',(req,res)=>{
 const name=req.body.id;
 const type=req.body.className;
 const id=req.body.user_id;
+console.log("Button.js user_id:"+id);
 
 console.log(name+'\n'+type);
 
 if(type==='a-food')
 {
+
    const data= authentic_food.find((element)=>{
         return element.name===name
     });
@@ -48,12 +50,14 @@ if(data)
 {
   const taste=data.taste;
   const level=data.level;
+  console.log(taste +'/n'+ level);
 
 authentic_food.forEach((element)=>{
   if(element.taste===taste && element.level===level && element!=data)
   {
     Suggestion.findOne({ name: element.name, id:id }).exec()
     .then((foundData) => {
+      console.log(foundData);
     if (foundData) {
       console.log('User exists');
     } else {
@@ -78,6 +82,7 @@ authentic_food.forEach((element)=>{
 
 else if(type==='g-food')
 {
+  console.log("Generic food contianer");
     const data= generic_food.find((element)=>{
         return element.name===name
     });
@@ -115,6 +120,7 @@ else if(type==='g-food')
             {
               Suggestion.findOne({ name: element.name, id:id }).exec()
               .then((foundData) => {
+                console.log(foundData);
               if (foundData) {
                 console.log('User  exists');
               } else {

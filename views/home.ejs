@@ -14,7 +14,7 @@
             <h1><a href="/home">Khan Pin</a></h1>
             <div class="buttons">
                 <form action="/recommendation" method="POST">
-                    <input type="hidden" name="user_id" value=<%=user_id%>>
+                    <!-- <input type="hidden" name="user_id" value=<%=user_id%>> -->
                     <button id="recommendation"> <i class='bx bx-dish' ></i>Recommendation</button>
                 </form>
                 <a href="/map"> <button><i class='bx bx-map' ></i> Map</button></a>
@@ -346,8 +346,10 @@ const buttons = document.querySelectorAll('button');
 
 buttons.forEach(button => {
   button.addEventListener('click', (e) => {
-    let user_id='<%=user_id%>';
-    console.log(user_id);
+    let user_id='<%= user_id %>';
+    console.log("Home.ejs button user_id"+user_id);
+    // console.log("Home.html"+user_id);
+    // console.log(user_id);
     const id = e.target.id;
     const className = e.target.className;
 

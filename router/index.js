@@ -13,54 +13,34 @@ Router.get('/',(req,res)=>{
         res.sendFile(path.resolve(__dirname,'../final/index.html'))
     });
 
-Router.post('/',async(req,res)=>{
-
-    
+    Router.post('/', async (req, res) => {
         try {
-            const username=req.body.username;
-            const password=req.body.password;
-            const Username=await Register.findOne({username});
-
-            const isMatch=bcrypt.compare(password,Username.password);
+            const username = req.body.username;
+            const password = req.body.password;
+            const Username = await Register.findOne({ username });
     
-            const token=await Username.generateAuthToken();
-            console.log('Token part is '+token);
-
-            res.cookie("jwt",token,{
-                expires:new Date(Date.now()+600000),
-                httpOnly:true,
-                // secure:true
-            });
-            console.log(`This is the cookie ${req.cookies.jwt}`);
-            // console.log('Cookie is saved');
+            if (!Username) {
+                res.status(400).send("Invalid Username");
+                return;
+            }
     
-        if(isMatch)
-        {
-
-            // res.status(201).sendFile(path.resolve(__dirname,'../final/home.html'));
-            res.redirect('/home')
-
+            const isMatch = await bcrypt.compare(password, Username.password);
+    
+            if (isMatch) {
+                const token = await Username.generateAuthToken();
+                res.cookie("jwt", token, {
+                    expires: new Date(Date.now() + 6000000),
+                    httpOnly: true,
+                    // secure:true
+                });
+                res.redirect('/home');
+            } else {
+                res.send('Invalid Login Details');
+            }
+        } catch (error) {
+            res.status(400).send("Error occurred");
         }
-
-        else
-        {
-            res.send('Invalid Login Details');
-        }
-
-
-
-
-        } 
-    
-        
-        catch (error) {
-            res.status(400).send("Invalid Username")
-        }
-    
-    
-    
-    
-});
+    });
     
 
 

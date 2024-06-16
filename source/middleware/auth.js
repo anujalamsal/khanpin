@@ -1,8 +1,5 @@
-
-
 const jwt = require('jsonwebtoken');
 const Register = require('../models/registers');
-
 
 const auth = async (req, res, next) => {
   try {
@@ -25,7 +22,8 @@ const auth = async (req, res, next) => {
     }
 
     else{
-    req.user_id = user._id;
+    req.user=user;
+    console.log("auth.js user_id"+req.user_id);
     next();
     }
 
