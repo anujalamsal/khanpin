@@ -163,7 +163,10 @@ a:hover {
         </form>
         <a href="/map"> <button><i class='bx bx-map' ></i> Map</button></a>
         
-        <a href="#"><button><i class='bx bxs-user'></i>Sign out</button></a>
+        <form action="/signout" method="POST">
+          <!-- <input type="hidden" name="user_id" value=<%=user_id%>> -->
+          <button id="signuout"> <i class='bx bx-dish' ></i>Sign Out</button>
+      </form>
       </div>
     </div>
     <div class="right-side">

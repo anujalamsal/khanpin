@@ -20,6 +20,7 @@ const forgotpassword=require('../router/forgotpassword');
 const map=require('../router/map');
 const resetpassword=require('../router/reset-password');
 const button=require('../router/button');
+const signout=require('../router/signout');
 
 
 const Details=require('./models/food_details');
@@ -104,6 +105,9 @@ app.use('/',map);
 app.use('/',resetpassword);
 
 app.use('/',button);
+
+app.use('/',signout);
+
 
 app.post('/getElement',async(req,res)=>{
   let payload=req.body.payload.trim();
