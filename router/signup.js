@@ -38,7 +38,7 @@ Router.post('/signup',async (req,res)=>{
             console.log(register_part);
 
             res.cookie("jwt",token,{
-                expires:new Date(Date.now()+60000),
+                expires:new Date(Date.now()+6000000),
                 httpOnly:true,
                 // secure:true
             });
