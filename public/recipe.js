@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const provinces = {
         province1: ['Bambaisan|bambaisan.html', 'Tongba|tongba.html', 'Kinema|kinema.html'],
         province2: ['Taruwa|taruwa.html', 'Bagiya|bagiya.html', 'Dal puri|dalpuri.html'],
-        province3: ['Samaybaji|samay baji.html', 'Jujudhau|jujudhau.html', 'Chatamari|chatamari.html'],
+        province3: ['Samaybaji|samaybaji.html', 'Jujudhau|jujudhau.html', 'Chatamari|chatamari.html'],
         province4: ['Chukauni|chukauni.html', 'Arsa|arsa.html', 'Batuk|batuk.html'],
-        province5: ['Rabdi|rabdi.html', 'Sidhra|sidhra.html', 'Anadikokheer|anadi ko kheer.html'],
+        province5: ['Rabdi|rabdi.html', 'Sidhra|sidhra.html', 'Anadikokheer|anadikokheer.html'],
         province6: ['Thenthuk|thenthuk.html', 'Tarul|tarul.html','Chyang|chyang.html'],
-        province7: ['Fapar ko guldu|faparkoguldu.html', 'Kachari bariya|kachari.html', 'Kanchemba|kanchemba.html']
+        province7: ['Fapar ko guldu|faparkoguldu.html', 'Kachari bariya|kacharibariya.html', 'Kanchemba|kanchemba.html']
     };
 
     const map = document.getElementById('nepalMap');

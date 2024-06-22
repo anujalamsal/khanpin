@@ -93,7 +93,7 @@ const authentic_food=[
     province:"gandaki",
     level:"medium",
     img:'batuk.jpg',
-    link:'chukauni.html'
+    link:'batuk.html'
 
 },
 
@@ -101,8 +101,8 @@ const authentic_food=[
     taste:"sweet",
     province:"gandaki",
     level:"difficult",
-    img:'aarsa.jpg',
-    link:'aarsa.html'
+    img:'arsa.png',
+    link:'arsa.html'
 },
 
 // {   name:"ghongbi",
@@ -130,12 +130,12 @@ const authentic_food=[
 },
 
 {
-    name:"anadhikokheer",
+    name:"anadikokheer",
     taste:"sweet",
     province:"gandaki",
     level:"easy",
-    link:'anadhikokheer.html',
-    img:'anadhi ko kheer.jpg'
+    link:'anadikokheer.html',
+    img:'anadi ko kheer.jpg'
 },
 
 
@@ -160,7 +160,7 @@ const authentic_food=[
     taste:"salty",
     province:"sudurpaschim",
     level:"medium",
-    link:'kachari.html',
+    link:'kacharibariya.html',
     img:'kachari.jpg'
 
 },
@@ -199,7 +199,17 @@ const authentic_food=[
     level:"easy",
     link:'tarul.html',
     img:'tarul.jpg'
-}
+},
+
+// {
+//     name:"gwarcha",
+//     taste:"earthy",
+//     province:"karnali",
+//     level:"easy",
+//     link:'gwarcha.html',
+//     img:'gwarcha.jpg'
+// }
+
 
 
 ];
